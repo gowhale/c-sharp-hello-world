@@ -26,6 +26,68 @@ namespace c_sharp_hello_world
 
             double numberTwoAsDouble = Convert.ToDouble(numberTwo);
 
+            bool isOptionValid = false;
+
+            while (!isOptionValid) {
+
+                Console.WriteLine("Please enter one of the following options:");
+                Console.WriteLine("     '+' for addition");
+                Console.WriteLine("     '-' for subtraction");
+                Console.WriteLine("     '*' for multiplication");
+                Console.WriteLine("     '/' for division");
+
+                string arithmaticSelection = Console.ReadLine();
+
+                switch (arithmaticSelection)
+                {
+                    case "+":
+                        Console.WriteLine("The sum of these two numbers is: ");
+                        Console.WriteLine($"{numberOne} + {numberTwo} = {numberOneAsDouble + numberTwoAsDouble}");
+                        isOptionValid = true; 
+                        break;
+                    case "-":
+                        Console.WriteLine("The subtraction of these two numbers is: ");
+                        Console.WriteLine($"{numberOne} - {numberTwo} = {numberOneAsDouble - numberTwoAsDouble}");
+                        isOptionValid = true; 
+                        break;
+                    case "*":
+                        Console.WriteLine("The multiplication of these two numbers is: ");
+                        Console.WriteLine($"{numberOne} * {numberTwo} = {numberOneAsDouble * numberTwoAsDouble}");
+                        isOptionValid = true; 
+                        break;
+                    case "/":
+
+                        if (numberOne == "0" || numberTwo == "0")
+                        {
+                            Console.WriteLine("Divsion by 0 is not valid. Sorry! Try something else.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("The division of these two numbers is: ");
+                            Console.WriteLine($"{numberOne} / {numberTwo} = {numberOneAsDouble / numberTwoAsDouble}");
+                            isOptionValid = true;
+                        }
+                        break;
+                    default:
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.WriteLine("INVALID ENTRY PLEASE TRY AGAIN ");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+
+                }
+
+            }
+
+
+            Console.WriteLine("Press enter to see all other combinations...");
+            Console.ReadLine();
+
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("All possible combinations:");
 
